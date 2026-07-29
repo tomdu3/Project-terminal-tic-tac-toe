@@ -17,12 +17,19 @@ import { checkIfNoMovesLeft } from "./board-printer.js";
     Return true if the player has made a move in all 3 squares in the row
     Otherwise, return false
 */
-function checkRow(board, player, rowNumber) {
-  return (
-    board[rowNumber][0] === player &&
-    board[rowNumber][1] === player &&
-    board[rowNumber][2] === player
-  );
+export function checkRow(board, player, rowNumber) {
+  for (let i = 0; i < 3; i++) {
+    if (board[rowNumber - 1][i] !== player) {
+      return false;
+    }
+  }
+  return true;
+
+  // return (
+  //   board[rowNumber][0] === player &&
+  //   board[rowNumber][1] === player &&
+  //   board[rowNumber][2] === player
+  // );
 }
 
 /*
