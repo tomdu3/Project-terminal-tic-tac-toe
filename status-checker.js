@@ -62,7 +62,7 @@ export function checkColumn(board, player, columnNumber) {
     Return true if the player has made a move in 3 diagonal squares
     Otherwise, return false
 */
-function checkDiagonal(board, player) {
+export function checkDiagonal(board, player) {
   return (
     (board[0][0] === player &&
       board[1][1] === player &&
