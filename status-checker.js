@@ -19,7 +19,7 @@ import { checkIfNoMovesLeft } from "./board-printer.js";
 */
 export function checkRow(board, player, rowNumber) {
   for (let i = 0; i < 3; i++) {
-    if (board[rowNumber - 1][i] !== player) {
+    if (board[rowNumber][i] !== player) {
       return false;
     }
   }
@@ -42,7 +42,7 @@ export function checkRow(board, player, rowNumber) {
 */
 export function checkColumn(board, player, columnNumber) {
   for (let i = 0; i < 3; i++) {
-    if (board[i][columnNumber - 1] !== player) {
+    if (board[i][columnNumber] !== player) {
       return false;
     }
   }
