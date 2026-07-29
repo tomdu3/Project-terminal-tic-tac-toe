@@ -1,4 +1,9 @@
-import { checkRow, checkColumn, checkDiagonal } from "../status-checker";
+import {
+  checkRow,
+  checkColumn,
+  checkDiagonal,
+  isGameOver,
+} from "../status-checker";
 
 describe("checkRow function", () => {
   test("should return true if there is 3 in a row of a player", () => {
@@ -8,7 +13,7 @@ describe("checkRow function", () => {
       ["O", "O", "X"],
     ];
     const player = "X";
-    const rowNumber = 1;
+    const rowNumber = 0;
     expect(checkRow(board, player, rowNumber)).toBe(true);
   });
   test("should return false if there is not 3 in a row of a player", () => {
@@ -18,7 +23,7 @@ describe("checkRow function", () => {
       ["O", "O", "X"],
     ];
     const player = "X";
-    const rowNumber = 1;
+    const rowNumber = 0;
     expect(checkRow(board, player, rowNumber)).toBe(false);
   });
 });
@@ -31,7 +36,7 @@ describe("checkColumn function", () => {
       ["X", "O", "X"],
     ];
     const player = "X";
-    const columnNumber = 1;
+    const columnNumber = 0;
     expect(checkColumn(board, player, columnNumber)).toBe(true);
   });
   test("1", () => {
@@ -78,5 +83,40 @@ describe("checkDiagonal function", () => {
     const player = "X";
 
     expect(checkDiagonal(board, player)).toBe(false);
+  });
+});
+
+describe("game over check", () => {
+  test("should return true if player x wins", () => {
+    const board = [
+      ["X", "X", "X"],
+      ["_", "_", "_"],
+      ["O", "O", "X"],
+    ];
+    expect(isGameOver(board)).toBe(true);
+  });
+  test("should return true if player O wins", () => {
+    const board = [
+      ["X", "X", "X"],
+      ["_", "_", "_"],
+      ["O", "O", ")"],
+    ];
+    expect(isGameOver(board)).toBe(true);
+  });
+  test("should return true if no moves left", () => {
+    const board = [
+      ["X", "X", "O"],
+      ["X", "X", "O"],
+      ["O", "O", "X"],
+    ];
+    expect(isGameOver(board)).toBe(true);
+  });
+  test("should return false if no one has won but there are moves left", () => {
+    const board = [
+      ["X", "X", "O"],
+      ["_", "_", "_"],
+      ["O", "O", "X"],
+    ];
+    expect(isGameOver(board)).toBe(false);
   });
 });
