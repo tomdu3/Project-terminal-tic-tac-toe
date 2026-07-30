@@ -19,7 +19,9 @@ function validateMove(move, board) {
   // Implement this at the end if you have time, otherwise you can help your teammates!
   const [row, col] = move.split(",");
   if (row > 0 && row < 4 && col > 0 && col < 4) {
-    return board[row - 1][col - 1] === "_";
+    if (board[row - 1][col - 1] === "_") {
+      return true;
+    }
   }
   console.log("Try again...\n");
   return false;
