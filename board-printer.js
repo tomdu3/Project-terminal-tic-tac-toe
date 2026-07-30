@@ -44,13 +44,9 @@ export function printBoard(board) {
     boardOutput += horizontalLine;
     boardOutput += "\n";
   }
-  return boardOutput;
+  console.log(boardOutput);
 }
-console.log(printBoard([
-            ['X', '_', '_'],
-            ['_', 'X', '_'],
-            ['O', 'O', 'X']
-        ])); 
+
 /*
     Given a tic-tac-toe board (an array of arrays),
         - return true if there are no moves left to make (there are no more '_' values)
@@ -70,8 +66,10 @@ export function checkIfNoMovesLeft(board) {
   }
   return true;
 }
-console.log(checkIfNoMovesLeft([
-      ["X", "O", "X"],
-      ["O", "X", "O"],
-      ["O", "X", "X"],
-    ]));
+console.log(
+  checkIfNoMovesLeft([
+    ["X", "O", "X"],
+    ["O", "X", "O"],
+    ["O", "X", "X"],
+  ])
+);
