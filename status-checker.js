@@ -24,12 +24,6 @@ export function checkRow(board, player, rowNumber) {
     }
   }
   return true;
-
-  // return (
-  //   board[rowNumber][0] === player &&
-  //   board[rowNumber][1] === player &&
-  //   board[rowNumber][2] === player
-  // );
 }
 
 /*
@@ -47,12 +41,6 @@ export function checkColumn(board, player, columnNumber) {
     }
   }
   return true;
-
-  // return (
-  //   board[0][columnNumber] === player &&
-  //   board[1][columnNumber] === player &&
-  //   board[2][columnNumber] === player
-  // );
 }
 
 /*
