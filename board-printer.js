@@ -66,10 +66,4 @@ export function checkIfNoMovesLeft(board) {
   }
   return true;
 }
-console.log(
-  checkIfNoMovesLeft([
-    ["X", "O", "X"],
-    ["O", "X", "O"],
-    ["O", "X", "X"],
-  ])
-);
+
